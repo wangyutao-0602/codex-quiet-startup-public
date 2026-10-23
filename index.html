@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; img-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'none'"
+    />
+    <title>Codex · Quiet Intelligence</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="image-settings.js" defer></script>
+    <script src="animation.js" defer></script>
+  </head>
+  <body>
+    <main class="preview">
+      <header>
+        <a class="brand" href="#"
+          >✳ <strong>CODEX</strong><span> / QUIET INTELLIGENCE</span></a
+        ><span class="edition">STARTUP STUDY — 01</span>
+      </header>
+      <section class="window" aria-label="角色启动动画">
+        <div class="end-screen">
+          <small>SEQUENCE COMPLETE</small>
+          <h1>Ready when you are.</h1>
+          <p>预览已结束 · 正式启动时会进入 Codex</p>
+          <button id="replay-end">重新播放 ↻</button>
+        </div>
+        <div class="scene">
+          <canvas id="stage" class="line-art"></canvas>
+          <div class="topline">
+            <span>NEURAL INTERFACE</span><span id="phase">SYSTEM WAKE</span>
+          </div>
+          <div class="caption">
+            <p id="eyebrow">INITIALIZING CODEX</p>
+            <h1 id="headline">Quiet intelligence.</h1>
+            <p id="subline">AI SYSTEM / AWAKENING</p>
+            <p id="greeting" hidden>Welcome back. Take a breath.<br />Even you don't have to solve everything alone.</p>
+          </div>
+          <div class="telemetry">
+            <span id="status">ESTABLISHING CONNECTION</span
+            ><span id="percent">000%</span>
+          </div>
+        </div>
+        <div class="actions">
+          <button id="settings">设置</button
+          ><button id="skip">跳过 <kbd>ESC</kbd></button>
+        </div>
+        <p id="notice" role="status" hidden></p>
+      </section>
+      <footer>
+        <button id="replay" aria-label="重播">↻</button
+        ><button id="pause">暂停</button
+        ><input
+          id="timeline"
+          aria-label="动画时间轴"
+          type="range"
+          min="0"
+          max="9"
+          step="0.01"
+          value="0"
+        /><output id="elapsed">0.0 / 9.0 s</output
+        ><button id="launch" hidden>播放并打开 Codex ↗</button>
+      </footer>
+      <p class="note">冷静 · 理性 · 微光<span>本地渲染 / 可随时跳过</span></p>
+      <dialog id="settings-dialog">
+        <form method="dialog">
+          <button class="close" aria-label="关闭">×</button>
+        </form>
+        <small>PERSONALIZE YOUR SEQUENCE</small>
+        <h2>你的启动时刻</h2>
+        <p>图片仅保存在本机。更换人物时自动重新提取描线。</p>
+        <div class="grid">
+          <label
+            >人物图（推荐透明 PNG）<input
+              id="character-file"
+              type="file"
+              accept="image/png,image/jpeg,image/webp" /></label
+          ><label
+            >背景图（可选）<input
+              id="background-file"
+              type="file"
+              accept="image/png,image/jpeg,image/webp" /></label
+          ><label>开场文字<input id="initialText" maxlength="64" /></label
+          ><label>欢迎文字<input id="welcomeText" maxlength="64" /></label
+          ><label>完成文字<input id="onlineText" maxlength="64" /></label
+          ><label
+            >时长（5–15 秒）<input
+              id="duration"
+              type="number"
+              min="5"
+              max="15"
+              step="0.5" /></label
+          ><label
+            >粒子数量（80–600）<input
+              id="particles"
+              type="number"
+              min="80"
+              max="600"
+              step="20" /></label
+          ><label
+            >发光强度（0–1）<input
+              id="glow"
+              type="number"
+              min="0"
+              max="1"
+              step="0.1" /></label
+          ><label
+            >动态效果<select id="motion">
+              <option value="auto">跟随系统</option>
+              <option value="reduce">减少动态效果</option>
+              <option value="full">完整动画</option>
+            </select></label
+          ><label
+            >其他模式帧率（角色动作固定 60 FPS）<select id="fps">
+              <option value="30">30 FPS · 节能</option>
+              <option value="60">60 FPS</option>
+            </select></label
+          >
+        </div>
+        <p id="settings-status" role="status"></p>
+        <div class="buttons">
+          <button id="reset">恢复默认</button
+          ><button id="save">保存并预览</button
+          ><button id="restore" hidden>关闭扩展并恢复外观</button>
+        </div>
+      </dialog>
+    </main>
+  </body>
+</html>

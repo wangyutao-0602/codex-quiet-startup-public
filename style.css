@@ -1,0 +1,374 @@
+:root {
+  color-scheme: dark;
+  font:
+    14px -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    sans-serif;
+  color: #c3cbdc;
+  background: #080b12;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  background: radial-gradient(ellipse at 50% 0, #151a2c, transparent 65%);
+  min-height: 100vh;
+}
+button,
+input,
+select {
+  font: inherit;
+}
+button {
+  color: #c4d2e6;
+  background: #121b2a;
+  border: 1px solid #27364b;
+  border-radius: 6px;
+  padding: 9px 15px;
+  cursor: pointer;
+}
+button:hover {
+  background: #203148;
+  border-color: #6294aa;
+}
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid #88e2ef;
+  outline-offset: 3px;
+}
+.preview {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 48px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  font-size: 10px;
+  letter-spacing: 2px;
+}
+.brand {
+  color: #e1e8f2;
+  text-decoration: none;
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+.brand span {
+  font-size: 9px;
+  color: #6f829e;
+}
+.edition {
+  color: #65718a;
+}
+.window {
+  position: relative;
+  aspect-ratio: 1.6;
+  overflow: hidden;
+  border: 1px solid #2c3447;
+  border-radius: 14px;
+  background: #080d18;
+  box-shadow: 0 25px 90px #0006;
+}
+.scene {
+  position: absolute;
+  inset: 0;
+  background: #070b15;
+  transition: none;
+}
+canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.topline {
+  position: absolute;
+  top: 28px;
+  left: 30px;
+  right: 30px;
+  display: flex;
+  justify-content: space-between;
+  font: 9px monospace;
+  letter-spacing: 2px;
+  color: #7d95b6;
+}
+.caption {
+  position: absolute;
+  left: 6%;
+  top: 38%;
+  width: 40%;
+  pointer-events: none;
+}
+.caption p {
+  font: 10px monospace;
+  letter-spacing: 2px;
+  color: #82cede;
+  line-height: 1.8;
+}
+.caption h1 {
+  font-size: clamp(24px, 3.5vw, 50px);
+  line-height: 1.12;
+  font-weight: 300;
+  letter-spacing: -1.5px;
+  color: #eef3fb;
+  margin: 18px 0;
+}
+.caption #subline {
+  font-size: 9px;
+  color: #8795b4;
+}
+.caption #greeting {
+  margin-top: 22px;
+  max-width: 290px;
+  font: 300 clamp(11px, 1.35vw, 15px)/1.75 -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.3px;
+  color: #b6c6da;
+}
+.telemetry {
+  position: absolute;
+  bottom: 30px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  justify-content: space-between;
+  font: 9px monospace;
+  letter-spacing: 2px;
+  color: #708ba8;
+}
+.actions {
+  position: absolute;
+  top: 55px;
+  left: 6%;
+  display: flex;
+  gap: 8px;
+}
+.actions button {
+  font-size: 10px;
+  background: #0c14228a;
+  padding: 6px 10px;
+}
+kbd {
+  margin-left: 8px;
+  color: #6b8ba1;
+}
+.end-screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.end-screen small {
+  color: #79c4d3;
+  letter-spacing: 3px;
+}
+.end-screen h1 {
+  font-size: 36px;
+  font-weight: 300;
+}
+.end-screen p {
+  color: #75849c;
+  font-size: 12px;
+}
+.end-screen button {
+  margin-top: 20px;
+}
+footer {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 20px;
+}
+footer button {
+  background: none;
+  font-size: 12px;
+}
+footer input {
+  flex: 1;
+  min-width: 30px;
+  accent-color: #7dc2d2;
+}
+footer output {
+  font: 11px monospace;
+  color: #7e8ca3;
+  white-space: nowrap;
+}
+.note {
+  display: flex;
+  justify-content: space-between;
+  color: #4e607b;
+  font-size: 10px;
+  margin-top: 24px;
+  letter-spacing: 1px;
+}
+dialog {
+  width: min(650px, 92vw);
+  max-height: 90vh;
+  overflow: auto;
+  background: #101827;
+  color: #c8d5e7;
+  border: 1px solid #34465f;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 30px 100px #0009;
+}
+dialog::backdrop {
+  background: #030813bc;
+  backdrop-filter: blur(8px);
+}
+dialog small {
+  font: 10px monospace;
+  color: #79c4d3;
+  letter-spacing: 2px;
+}
+dialog h2 {
+  font-weight: 400;
+}
+dialog p {
+  font-size: 12px;
+  color: #90a3bf;
+  line-height: 1.6;
+}
+.close {
+  float: right;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+.grid label {
+  font-size: 12px;
+  color: #9bacbf;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.grid input,
+.grid select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #344158;
+  background: #0b1220;
+  color: #d3e4f4;
+  border-radius: 5px;
+  padding: 9px;
+}
+.grid input[type="file"] {
+  font-size: 10px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+#notice {
+  position: absolute;
+  bottom: 55px;
+  left: 6%;
+  font-size: 11px;
+  color: #b1d4de;
+  max-width: 80%;
+}
+[hidden] {
+  display: none !important;
+}
+body.embedded {
+  background: transparent;
+}
+body.embedded .preview {
+  padding: 0;
+  max-width: none;
+}
+body.embedded header,
+body.embedded footer,
+body.embedded .note {
+  display: none;
+}
+body.embedded .window {
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+body.embedded .end-screen {
+  display: none;
+}
+body.embedded {
+  min-height: 0;
+}
+@media (max-width: 650px) {
+  .preview {
+    padding: 20px 12px;
+  }
+  .brand span,
+  .edition {
+    display: none;
+  }
+  .window {
+    aspect-ratio: 1.1;
+  }
+  .caption {
+    left: 6%;
+    width: 42%;
+  }
+  .caption h1 {
+    font-size: 26px;
+  }
+  .topline {
+    top: 18px;
+    left: 20px;
+    right: 20px;
+    font-size: 7px;
+  }
+  .actions {
+    top: 42px;
+  }
+  .telemetry {
+    font-size: 7px;
+    bottom: 20px;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .note {
+    font-size: 8px;
+  }
+  footer {
+    gap: 5px;
+  }
+  .caption p {
+    font-size: 8px;
+  }
+}
+body.launch-mode,
+body.launch-mode .preview {
+  background: transparent;
+  padding: 0;
+  max-width: none;
+}
+body.launch-mode header,
+body.launch-mode footer,
+body.launch-mode .note,
+body.launch-mode .end-screen {
+  display: none;
+}
+body.launch-mode .window {
+  width: 100vw;
+  height: 100vh;
+  aspect-ratio: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}

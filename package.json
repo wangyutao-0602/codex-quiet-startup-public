@@ -1,0 +1,16 @@
+{
+  "name": "codex-quiet-startup",
+  "version": "1.2.0",
+  "private": true,
+  "description": "Local anime character startup sequence, based on panding999/codex-startup-animation",
+  "scripts": {
+    "test": "node --test tests/core.test.cjs tools/extension.test.mjs",
+    "test:render": "node tests/render.cjs",
+    "test:browser": "node tools/extension-preview.mjs && node tests/browser.cjs",
+    "preview": "bash tools/preview.sh"
+  },
+  "devDependencies": {
+    "@napi-rs/canvas": "0.1.80",
+    "playwright": "1.51.1"
+  }
+}
